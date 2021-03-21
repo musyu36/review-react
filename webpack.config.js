@@ -1,10 +1,16 @@
+// 'production' か 'development' を指定
+const MODE = "development";
+
+// ソースマップの利用有無(productionのときはソースマップを利用しない)
+const enabledSourceMap = MODE === "development";
+
 const webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
     // productionモードで、最適化された状態に
     // developmentモードで、ソースマップ有効でJSファイルが出力される
-    mode: "development",
+    mode: MODE,
     // メインとなるJavaScriptファイル(エントリーポイント)
     entry: "./src/main.tsx",
     // ファイルの出力設定
@@ -19,6 +25,19 @@ module.exports = {
                 test: /\.tsx?$/,
                 // TypeScript をコンパイルする
                 use: "ts-loader",
+            },
+            {
+                test: /\.css/,
+                use: [
+                "style-loader",
+                {
+                    loader: "css-loader",
+                    options: {
+                        url: false, // CSS内のurl()メソッドの取り込みを禁止する
+                        sourceMap: enabledSourceMap,
+                    }
+                }
+                ]
             }
         ]
     },

@@ -1,7 +1,9 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {SubComponent} from './sub-component';
+import { SubComponent } from './sub-component';
+
+import "./style.css"
 
 class App extends React.Component {
   render() {
