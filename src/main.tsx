@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { SubComponent } from './sub-component';
 
-import "./style.css"
+import "./styles/style.scss";
 
 class App extends React.Component {
   render() {
