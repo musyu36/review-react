@@ -11,6 +11,8 @@
         "lib": [
             "es2020",
             "dom"
-        ]        
+        ],
+        // デフォルトエクスポートしていない、モジュールのデフォルトインポートを許可
+        "allowSyntheticDefaultImports": true
     }
 }

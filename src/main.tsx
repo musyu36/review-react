@@ -1,8 +1,8 @@
 
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { SubComponent } from './sub-component';
+import  React from 'react';
+import  ReactDOM from 'react-dom';
 
+import { SubComponent } from './sub-component';
 import "./styles/style.scss";
 
 class App extends React.Component {
