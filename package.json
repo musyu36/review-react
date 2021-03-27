@@ -2,7 +2,9 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve",
-    "watch": "webpack -w"
+    "watch": "webpack -w",
+    "eslint:fix": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
+    "prettier:fix": "prettier --write src"
   },
   "dependencies": {
     "react": "^17.0.1",

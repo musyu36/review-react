@@ -10,14 +10,14 @@ interface IState {
 }
 
 export class SubComponent extends React.Component<IProps, IState> {
-  constructor(props) {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       count: 0,
     };
   }
 
-  handleClick() {
+  handleClick(): void {
     console.log('クリックされました');
 
     this.setState({
@@ -25,14 +25,13 @@ export class SubComponent extends React.Component<IProps, IState> {
     });
   }
 
-  render() {
-
+  render(): JSX.Element {
     return (
-        <div>
-          <h2>{this.props.name}</h2>
-          <div>{this.state.count}</div>
-          <button onClick={this.handleClick.bind(this)}>Add +1</button>
-        </div>
+      <div>
+        <h2>{this.props.name}</h2>
+        <div>{this.state.count}</div>
+        <button onClick={this.handleClick.bind(this)}>Add +1</button>
+      </div>
     );
   }
 }
